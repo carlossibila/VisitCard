@@ -9,7 +9,7 @@ A mobile-optimized single-page website for your real estate business card, acces
 Run the Python script to create colored placeholder images:
 
 ```bash
-python create_placeholders.py
+python Python/create_placeholders.py
 ```
 
 This creates 9 placeholder JPG files in the `images/` folder.
@@ -149,8 +149,9 @@ sibila-card/
 ```
 
 **Do NOT commit:**
-- `myDevelopment/` folder (just for local development)
-- `create_placeholders.py` (only needed once locally)
+- `myDevelopment/` folder (development documentation only)
+- `Python/` folder (utility scripts, not needed for production)
+- `Share/` folder (generated QR codes, not part of website)
 - `.git/` folder (automatically ignored)
 
 ### Updating Your Site Later
@@ -171,7 +172,46 @@ Or use GitHub web interface to edit files directly.
 
 ## Generating QR Code
 
-### Option 1: Free Online Tools
+### Option 1: Python Script (Recommended - Local Generation)
+
+**Requirements:** Install the QR code library first:
+```bash
+pip install qrcode[pil]
+```
+
+**Generate QR codes with command-line argument:**
+```bash
+cd Python
+python generate_qrcode.py https://yourusername.github.io/repository-name
+```
+
+**Or run interactively:**
+```bash
+cd Python
+python generate_qrcode.py
+# Then enter your URL when prompted
+```
+
+**Output:**
+- Creates 6 PNG files in the `Share/` folder
+- **3 sizes**: 300x300, 600x600, 1200x1200 pixels
+- **2 colors**: Black and White versions of each size
+- **Transparent backgrounds**: Perfect for any design
+- **HIGH error correction**: Works even if 30% damaged
+- **File naming**: `QRC_300x300_Black.png`, `QRC_600x600_White.png`, etc.
+
+**Features:**
+- ✓ Portable script - works in any project
+- ✓ Automatically overrides old files when re-run
+- ✓ No internet connection needed
+- ✓ Professional quality for printing
+
+**When to use each size:**
+- **300x300**: Small prints, email signatures
+- **600x600**: Standard business cards
+- **1200x1200**: Large posters, banners, high-quality prints
+
+### Option 2: Free Online Tools
 1. Go to [qr-code-generator.com](https://www.qr-code-generator.com/)
 2. Select **URL** type
 3. Paste your GitHub Pages URL
@@ -181,7 +221,7 @@ Or use GitHub web interface to edit files directly.
 5. Download high-resolution QR code
 6. Print on business cards!
 
-### Option 2: QR Code API
+### Option 3: QR Code API
 Use a URL like:
 ```
 https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=YOUR_GITHUB_PAGES_URL
@@ -276,15 +316,21 @@ Edit `style.css` variables (lines 9-15):
 
 ```
 VisitCard/
-├── index.html              # Main website file (includes embedded SVG icons)
-├── style.css               # All styling
-├── README.md               # This file
-├── create_placeholders.py  # Image generator script (optional)
-├── images/
-│   ├── logo.jpg           # Your company logo
+├── index.html                      # Main website file (includes embedded SVG icons)
+├── style.css                       # All styling
+├── README.md                       # This file
+├── Python/                         # Python utility scripts
+│   ├── create_placeholders.py     # Image generator script (optional)
+│   └── generate_qrcode.py         # QR code generator script
+├── Share/                          # QR code output folder (created by script)
+│   └── QRC_*.png                  # Generated QR code files
+├── images/                         # Website images
+│   ├── logo.jpg                   # Your company logo
 │   └── property-1.jpg to property-8.jpg
-└── myDevelopment/
-    └── Plan.md            # Development plan (for reference)
+└── myDevelopment/                  # Development documentation
+    ├── Plan.md                    # Original development plan
+    ├── imageEnlargePlan.md        # Lightbox feature plan
+    └── QRCodePlan.md              # QR code generator plan
 ```
 
 ## Testing Checklist
