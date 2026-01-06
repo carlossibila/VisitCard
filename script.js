@@ -1,6 +1,6 @@
 // Platform-specific map routing
 function openMaps() {
-    const address = "Rua Quadrangular 3622, Primo Meneghetti, Franca, SP, 14403-220";
+    const address = "Rua Quadrangular, 3622, Esplanada Primo Meneghetti, Franca, SP, 14403-220";
     const encodedAddress = encodeURIComponent(address);
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
