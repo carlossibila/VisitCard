@@ -6,13 +6,13 @@ function openMaps() {
 
     let mapUrl;
 
-    // iOS - Open Apple Maps app
+    // iOS - Open Apple Maps (using HTTP scheme which works in Safari and triggers app)
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        mapUrl = `maps://maps.apple.com/?q=${encodedAddress}`;
+        mapUrl = `https://maps.apple.com/?q=${encodedAddress}`;
     }
-    // Android - Open Google Maps app
+    // Android - Open Google Maps app via intent
     else if (/android/i.test(userAgent)) {
-        mapUrl = `geo:0,0?q=${encodedAddress}`;
+        mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
     }
     // Desktop/Other - Open Google Maps web
     else {
