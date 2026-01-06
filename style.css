@@ -73,7 +73,7 @@ body {
 /* Contact Section */
 .contact-section {
     background-color: var(--light-gray);
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .contact-info {
@@ -113,9 +113,122 @@ body {
 }
 
 .contact-item .text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     word-break: break-word;
+}
+
+/* Opening Hours Section */
+.hours-section {
+    background-color: var(--light-gray);
+    padding: 1rem 1rem;
+    
+}
+
+.hours-info {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hours-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+}
+
+.hours-item .icon {
+    font-size: 1.5rem;
+    min-width: 30px;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.hours-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.hours-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.hours-time {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+.hours-exception {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--medium-gray);
+}
+
+/* Address Section */
+.address-section {
+    background-color: var(--light-gray);
+    padding: 0rem 1rem;    
+}
+
+.address-info {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+}
+
+.address-item:hover,
+.address-item:active {
+    background-color: var(--light-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.address-item .icon {
+    font-size: 1.5rem;
+    min-width: 30px;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.address-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.address-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.address-detail {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 /* Gallery Section */
@@ -227,7 +340,9 @@ body {
     .header-content,
     .contact-info,
     .gallery-grid,
-    .social-links {
+    .social-links,
+    .hours-info,
+    .address-info {
         max-width: 500px;
     }
 
@@ -244,7 +359,9 @@ body {
     .header-content,
     .contact-info,
     .gallery-grid,
-    .social-links {
+    .social-links,
+    .hours-info,
+    .address-info {
         max-width: 600px;
     }
 
@@ -263,5 +380,15 @@ body {
 
     .contact-item .text {
         font-size: 1.125rem;
+    }
+
+    .hours-label,
+    .address-label {
+        font-size: 1rem;
+    }
+
+    .hours-time,
+    .address-detail {
+        font-size: 0.95rem;
     }
 }
