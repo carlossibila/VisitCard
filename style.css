@@ -40,8 +40,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--white);
-    padding: 0.5rem;
+    color: var(--white);   
     text-align: center;
 }
 
@@ -51,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
     
 }
 
@@ -137,7 +137,7 @@ body {
 .footer {
     background-color: #B8CFE2;
     color: #000000;
-    padding: 1rem 1rem 0.75rem;
+    padding: 0.3rem 0.3rem 0.75rem;
     text-align: center;
 }
 
@@ -145,7 +145,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-hours-label {
